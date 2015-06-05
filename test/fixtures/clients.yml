@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ci: 1
+  name: MyString
+  last: MyString
+  telf: 1
+
+two:
+  ci: 1
+  name: MyString
+  last: MyString
+  telf: 1
