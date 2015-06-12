@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Almacens</h1>
+<h1>Almacen</h1>
 
 <table>
   <thead>
@@ -19,10 +19,8 @@
         <td><%= almacen.cod %></td>
         <td><%= almacen.nom %></td>
         <td><%= almacen.costo %></td>
-        <td><%= almacen.cantidad %></td>
-        <td><%= link_to 'Show', almacen %></td>
-        <td><%= link_to 'Edit', edit_almacen_path(almacen) %></td>
-        <td><%= link_to 'Destroy', almacen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= almacen.cantidad %></td>      
+        <td><%= link_to 'Editar', edit_almacen_path(almacen) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,5 +33,3 @@
 <%= link_to 'Nueva venta por menor', new_ventum_path %>
 <br>
 <%= link_to 'Clientes', clients_path %>
-<br>
-<%= link_to 'Almacen', almacens_path %>

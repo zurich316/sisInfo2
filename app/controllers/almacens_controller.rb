@@ -1,6 +1,9 @@
 class AlmacensController < ApplicationController
   before_action :set_almacen, only: [:show, :edit, :update, :destroy]
 
+
+  def aumentar
+  end
   # GET /almacens
   # GET /almacens.json
   def index

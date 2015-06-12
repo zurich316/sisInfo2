@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606011931) do
+ActiveRecord::Schema.define(version: 20150611223913) do
 
   create_table "almacens", force: :cascade do |t|
     t.string   "cod"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20150606011931) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "producto"
+    t.integer  "costo"
+    t.integer  "cantidad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "ventum_id"
+  end
+
+  add_index "lists", ["ventum_id"], name: "index_lists_on_ventum_id"
 
   create_table "venta", force: :cascade do |t|
     t.integer  "cod"

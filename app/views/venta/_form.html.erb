@@ -15,14 +15,10 @@
     <%= f.label :cod %><br>
     <%= f.number_field :cod %>
   </div>
-  <div class="field">
-    <%= f.label :cost %> <br>
-    <%= f.number_field :cost %>
-  </div>
 
   <div class="field">
     <%= f.label :Clientes %><br>
-    <%= f.collection_select(:client_id, Client.all, :id, :name) %> <%= link_to 'Nuevo Cliente', new_client_path %><br>
+    <%= f.collection_select(:client_id, Client.all, :id, :ci) %> <%= link_to 'Nuevo Cliente', new_client_path %><br>
   </div>
 
   <div class="actions">

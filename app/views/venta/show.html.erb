@@ -15,5 +15,49 @@
   <%= @ventum.client.name %>
 </p>
 
+<p>
+  <strong>ID:</strong>
+  <%= @ventum.id %>
+</p>
+
+<%= form_for(@list) do |f| %>
+<div class="field">
+    <%= f.hidden_field :ventum_id, :value => @ventum.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :producto %><br>
+    <%= f.collection_select(:producto, Almacen.all, :nom, :nom) %>
+  </div>
+  <div class="field">
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<% if @ventum.lists.count > 0%>
+		<b>Todas las ventas</b>
+		<br>
+		<table>
+			<tr>
+				<td>Producto</td>
+				<td>costo </td>
+				<td>Unidades</td>
+			</tr>
+		<% @ventum.lists.reverse.each do |com|%>			
+			<tr>
+				<td><%=com.producto %></td>
+				<td><%=com.costo %> BS.</td>
+				<td><%=com.cantidad %></td>
+				<td><%= link_to 'Destroy', com, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+		<%end%>
+		</table>
+	<%end%>
+
 <%= link_to 'Edit', edit_ventum_path(@ventum) %> |
 <%= link_to 'Back', venta_path %>

@@ -1,0 +1,31 @@
+<%= form_for(@list) do |f| %>
+  <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+
+      <ul>
+      <% @list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :Venta %><br>
+    <%= f.collection_select(:ventum_id, Ventum.all, :id, :cod) %> 
+  </div>
+
+  <div class="field">
+    <%= f.label :producto %><br>
+    <%= f.collection_select(:producto, Almacen.all, :nom, :nom) %>
+  </div>
+  <div class="field">
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

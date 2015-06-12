@@ -10,6 +10,9 @@ class VentaController < ApplicationController
   # GET /venta/1
   # GET /venta/1.json
   def show
+    @ventum.cost=List.where(ventum_id: params[:id]).sum(:costo)
+    @ventum.save
+    @list = List.new
   end
 
   # GET /venta/new

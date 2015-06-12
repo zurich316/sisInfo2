@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lists
   resources :almacens
   resources :venta
   resources :clients
